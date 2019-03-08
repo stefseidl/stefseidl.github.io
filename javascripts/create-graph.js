@@ -21,8 +21,8 @@ function createGraph(data){
 	
 	for (var i = 0; i < data.length-1; i++){
 		time.push(data[i][0]);
-		temperature.push(data[i][3]);
-		humidity.push(data[i][4]);
+		temperature.push(data[i][1]);
+		humidity.push(data[i][2]);
 		}
 	
 	var chart = c3.generate({
