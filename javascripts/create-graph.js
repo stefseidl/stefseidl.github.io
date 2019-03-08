@@ -4,7 +4,7 @@
  
 // Parse local CSV file
 function parseData(createGraph){
-	Papa.parse("../data/temphumdata3.csv", {
+	Papa.parse("../data/temphumdata.csv", {
 		download: true,
 		complete: function(results) {
 			console.log(results.data);
