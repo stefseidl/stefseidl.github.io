@@ -29,6 +29,7 @@ function createGraph(data){
 		bindto: '#chart',
 		data: {
 			x: 'x',
+			y: 'y',
 			xFormat: '%Y-%m-%d %H:%M:%S', // 'xFormat' can be used as custom format of 'x'
 			columns: [
 				time,
@@ -40,12 +41,21 @@ function createGraph(data){
 			x: {
 				type: 'timeseries',
 				tick: {
+				count: 8,
                 format: '%Y-%m-%d %H:%M:%S',
+				}	
+			},
+			y: {
+				max: 100,
+				min: 0,
+				padding: {top: 0, bottom:0}
 				}
-			}
 		},
 		zoom: {
 			enabled: true
+			},
+		point: {
+				r: 3
 			}
 	});
 
