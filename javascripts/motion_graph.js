@@ -1,31 +1,36 @@
-/*
- * Parse data and create a graph with the data
+/* Projekt HOME
+ * Originator: Stefan Seidl
+ * 
+ * Parse data and create a graph with the data: detected motion
  */
  
-// Parse local CSV file
+// Parse local csv-file and create Graph
 function parseData(createGraph){
-	Papa.parse("../data/motion_sensor_data.csv", {
+	Papa.parse("../data/motion_sensor_data.csv", { // Parsing data
 		download: true,
 		complete: function(results) {
 			console.log(results.data);
-			createGraph(results.data);
+			createGraph(results.data); // Run function createGraph() with the data parsed with Papa.parse
 	}
 });
 }
 
 function createGraph(data){
 	
+	// Variables
 	var time = ['x'];
 	var motion = ["motion"];
 	
+	// Save parsed data in Variables
 	for (var i = 0; i < data.length-1; i++){
 		time.push(data[i][0]);
 		motion.push(data[i][1]);
 		}
 	console.log(motion);
 	
+	// Create graph with customized design
 	var chart = c3.generate({
-		bindto: '#chart_motion',
+		bindto: '#chart_motion', // connect created graph to HTML section with id="chart_motion"
 		data: {
 			x: 'x',
 			y: 'y',
@@ -66,4 +71,4 @@ function createGraph(data){
 
 }
 
-parseData(createGraph);
+parseData(createGraph); // Parse CSV file and create Graph

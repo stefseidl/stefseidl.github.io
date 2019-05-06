@@ -1,4 +1,9 @@
-<!DOCTYPE html> <!-- The new doctype -->
+<!--
+Project HOME
+Originator: Stefan Seidl
+-->
+
+<!DOCTYPE html>
 
 <html>
 
@@ -8,15 +13,14 @@
     </style>
   <title>HOME Project</title>
 	
+	<!-- Load stylesheets -->
 	<link href="stylesheets/bootstrap.min.css" rel="stylesheet">
-  
-	<!-- Load c3.css -->
 	<link href="stylesheets/c3.css" rel="stylesheet" type="text/css">
   
-	<!-- Load d3.js and c3.js -->
+	<!-- Load libraries used for creating the graphs: d3.js and c3.js -->
 	<script src="javascripts/d3.min.js" charset="utf-8"></script>
 	<script src="javascripts/c3.min.js"></script>
-	<!-- Load papaparse.js -->
+	<!-- Load library for parsing data from a csv-file papaparse.js -->
 	<script src="javascripts/papaparse.min.js" charset="utf-8"></script>
 	
 </head>
@@ -29,7 +33,7 @@
 	<br>
 	</div>
 	<div class ="container">
-		<div id="chart_temphum"></div>
+		<div id="chart_temphum"></div> <!-- Graph for temperature and humidity -->
 	</div>
   
 	<br>
@@ -37,7 +41,7 @@
 	<br>
 	</div>
 	<div class ="container">
-		<div id="chart_motion"></div>
+		<div id="chart_motion"></div> <!-- Graph for detected motion -->
 	</div>
 	<br>
   
@@ -49,7 +53,8 @@
 	Content: This website is in use for the students project "HOME". It displays data which is generated with a Raspberry Pi B3+.
 	</p>
   </div>
-	
+	<!-- Load scripts for creating graphs
+	ID's of sections had to be declared first, before connecting the graphs to them -->
 	<script src="javascripts/temphum_graph.js"></script>
 	<script src="javascripts/motion_graph.js"></script>
 </body>

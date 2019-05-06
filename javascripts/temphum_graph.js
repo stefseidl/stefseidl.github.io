@@ -1,32 +1,37 @@
-/*
- * Parse data and create a graph with the data
+/* Projekt HOME
+ * Originator: Stefan Seidl
+ * 
+ * Parse data and create a graph with the data: temperature and humidity
  */
  
-// Parse local CSV file
+// Parse local csv-file and create Graph
 function parseData(createGraph){
-	Papa.parse("../data/temphum_data.csv", {
+	Papa.parse("../data/temphum_data.csv", { // Parsing data
 		download: true,
 		complete: function(results) {
 			console.log(results.data);
-			createGraph(results.data);
+			createGraph(results.data); // Run function createGraph() with the data parsed with Papa.parse
 	}
 });
 }
 
 function createGraph(data){
 	
+	// Variables
 	var time = ['x'];
 	var temperature = ["temperature"];
 	var humidity = ["humidity"];
 	
+	// Save parsed data in Variables
 	for (var i = 0; i < data.length-1; i++){
 		time.push(data[i][0]);
 		temperature.push(data[i][1]);
 		humidity.push(data[i][2]);
 		}
 	
+	// Create graph with customized design
 	var chart = c3.generate({
-		bindto: '#chart_temphum',
+		bindto: '#chart_temphum', // connect created graph to HTML section with id="chart_temphum"
 		data: {
 			x: 'x',
 			y: 'y',
@@ -64,4 +69,4 @@ function createGraph(data){
 
 }
 
-parseData(createGraph);
+parseData(createGraph); // Parse CSV file and create Graph
