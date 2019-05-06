@@ -1,4 +1,4 @@
-/* Projekt HOME
+/* Project HOME
  * Originator: Stefan Seidl
  * 
  * Parse data and create a graph with the data: detected motion
@@ -30,7 +30,7 @@ function createGraph(data){
 	
 	// Create graph with customized design
 	var chart = c3.generate({
-		bindto: '#chart_motion', // connect created graph to HTML section with id="chart_motion"
+		bindto: '#chart_motion', // Connect created graph to HTML section with id="chart_motion"
 		data: {
 			x: 'x',
 			y: 'y',

@@ -1,4 +1,4 @@
-/* Projekt HOME
+/* Project HOME
  * Originator: Stefan Seidl
  * 
  * Parse data and create a graph with the data: temperature and humidity
@@ -31,7 +31,7 @@ function createGraph(data){
 	
 	// Create graph with customized design
 	var chart = c3.generate({
-		bindto: '#chart_temphum', // connect created graph to HTML section with id="chart_temphum"
+		bindto: '#chart_temphum', // Connect created graph to HTML section with id="chart_temphum"
 		data: {
 			x: 'x',
 			y: 'y',
